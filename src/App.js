@@ -1,39 +1,37 @@
-import React, {Component} from 'react'
-class App extends Component{
+import React, { Component } from "react";
+import Feed from "./components/index";
 
-  constructor(props){
-    super(props)
+class App extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
-      status: false
-    }
-    this.sair = this.sair.bind(this)
-    this.entrar = this.entrar.bind(this)
+      feed: [
+        {id: 1, username: "Matheus", curtidas: 10, comentarios: 2},
+        {id: 2, username: "Lucas", curtidas: 102, comentarios: 20},
+        {id: 3, username: "Amanda", curtidas: 40, comentarios: 13},
+        {id: 3, username: "Ricardo", curtidas: 1, comentarios: 0},
+      ],
+    };
   }
 
-  sair(){
-    this.setState({status: false})
-  }
-
-  entrar(){
-    this.setState({status: true})
-  }
-
-  render(){
-    return(
+  // o map percorre todo o vetor item por item
+  // é necessário que seja passado uma key para cada user, no caso usamos o ID
+  render() {
+    return (
       <div>
-        {this.state.status ? 
-        <div>
-          <h2>Bem Vindo ao Sistema</h2>
-          <button onClick={this.sair}>Sair</button>
-        </div> : 
-        <div>
-          <h2>Olá visitante! Faça o login</h2>
-          <button onClick={this.entrar}>Entrar</button>
-        </div>
-        }
+        {this.state.feed.map((item) => {
+          return (
+            <Feed
+              id={item.id}
+              username={item.username}
+              curtidas={item.curtidas}
+              comentarios={item.comentarios}
+            />
+          );
+        })}
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
