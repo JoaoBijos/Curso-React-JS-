@@ -1,34 +1,37 @@
 import React, { Component } from "react";
-import Feed from "./components/index";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      feed: [
-        {id: 1, username: "Matheus", curtidas: 10, comentarios: 2},
-        {id: 2, username: "Lucas", curtidas: 102, comentarios: 20},
-        {id: 3, username: "Amanda", curtidas: 40, comentarios: 13},
-        {id: 3, username: "Ricardo", curtidas: 1, comentarios: 0},
-      ],
+      email: '',
+      senha: '',
+      sexo: ''
     };
+
   }
 
-  // o map percorre todo o vetor item por item
-  // é necessário que seja passado uma key para cada user, no caso usamos o ID
   render() {
     return (
       <div>
-        {this.state.feed.map((item) => {
-          return (
-            <Feed
-              id={item.id}
-              username={item.username}
-              curtidas={item.curtidas}
-              comentarios={item.comentarios}
-            />
-          );
-        })}
+        <h2>Cadastro</h2>
+        Email :
+        <input type='email' name='email' value={this.state.email}
+               onChange={(e) => this.setState({email: e.target.value})}/><br/>
+        Senha :
+        <input type='password' name='senha' value={this.state.senha}
+               onChange={(e) => this.setState({senha: e.target.value})}/><br/>
+        Sexo:
+        <select name='sexo' value={this.state.sexo} onChange={(e) => this.setState({sexo: e.target.value})}>
+          <option value='masculino'>Maculino</option>
+          <option value='feminino'>Feminino</option>
+        </select>
+
+        <div>
+          <h3>{this.state.email}</h3>
+          <h3>{this.state.senha}</h3>
+          <h3>{this.state.sexo}</h3>
+        </div>
       </div>
     );
   }
