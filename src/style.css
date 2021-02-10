@@ -1,18 +1,42 @@
 .container{
   display: flex;
-  flex-direction: column;
   width: 100%;
-  justify-content: center;
   align-items: center;
-}
-.img{
-  width: 300px;
-  height: 250px;
-  margin-top: 50px;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.textofrase{
-  font-style: italic;
-  color: #dd7b22;
+.img{
+  width: 340px;
+  height: 365px;
+  margin-top: 100px;
+}
+
+.timer{
+  font-size: 60px;
+  margin-top: -200px;
+}
+
+.areaBtn{
+  margin-top: 160px;
+  display: flex;
+}
+
+.botao{
+  width: 150px;
+  background-color: #fff;
+  font-size: 16px;
   text-align: center;
+  border-radius: 6px;
+  border-color: #dbdbdb;
+  margin-left: 16px;
+  margin-right: 16px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.botao:hover{
+  background-color: #000;
+  color: #fff;
+  transition: all 0.50s;
 }
