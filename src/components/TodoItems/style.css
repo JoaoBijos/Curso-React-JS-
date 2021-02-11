@@ -1,0 +1,13 @@
+.container ul{
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: #638378;
+  border: 2px solid #121212;
+}
+
+.items{
+  padding: 6px;
+}
