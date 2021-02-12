@@ -1,14 +1,12 @@
 import React, { Component } from "react";
-import TodoList from './components/Todolist/index'
-import './style.css'
+import Routes from './routes'
 
 class App extends Component {
 
   render() {
     return (
-      <div className='container'>
-          <h1>Lista de Tarefas</h1>
-          <TodoList/>
+      <div>
+         <Routes/>
       </div>
     );
   }
