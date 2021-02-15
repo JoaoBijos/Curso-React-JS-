@@ -1,18 +1,13 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
+import React, {Component} from 'react'
 
 class Erro extends Component{
-     render(){
-        return(
-            <div>
-                <h2>Opa ! Página não encontrada !</h2><br/>
-                <h2>Você está procurando por:</h2><br/>
-                <Link to='/'>Home</Link><br/>
-                <Link to="/sobre">Sobre</Link>  
-            </div>         
-        );
-    }
+  render(){
+    return(
+      <div>
+        <h1>Página não encontrada</h1>
+      </div>
+    )
+  }
 }
 
-export default Erro;
+export default Erro

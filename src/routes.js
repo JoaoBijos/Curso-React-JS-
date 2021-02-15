@@ -1,26 +1,24 @@
-import Rreact from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import React from 'react'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
-import Home from "./pages/home/index";
-import Sobre from "./pages/sobre/index";
-import Header from "./Component/Header/index"
-import Erro from "./pages/Erro/index"
-import Produto from "./pages/Produto/index"
+import  Header from './components/header/index'
 
-// switch permite que somente uma rota seja carregada por vez
-// para o id não ser fixo colocamos :id
+import Home from './pages/home/home'
+import Erro from './pages/erro/index'
+import Filme from './pages/filme/index'
+
+
 const Routes = () => {
-  return (
+  return(
     <BrowserRouter>
     <Header/>
-      <Switch> 
-        <Route exact path="/" component={Home} />
-        <Route exact path="/sobre" component={Sobre} />
-        <Route path='/produto/:id' component={Produto}/>
-        <Route path="*" component={Erro} />
+      <Switch>
+        <Route exact path='/' component={Home}/>
+        <Route exact path='/filme/:id' component={Filme}/>
+        <Route path='*' component={Erro}/>
       </Switch>
     </BrowserRouter>
-  );
-};
+  )
+}
 
-export default Routes;
+export default Routes
